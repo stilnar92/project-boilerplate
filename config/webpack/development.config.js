@@ -1,4 +1,5 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
+const { configureBabel } = require('../babel.config');
 
 module.exports = {
     mode: "development",
@@ -13,11 +14,7 @@ module.exports = {
     },
     module: {
         rules: [
-            {
-                test: /\.(js|jsx)$/,
-                exclude: /node_modules/,
-                use: ['babel-loader']
-            },
+            configureBabel(),
             {
                 test: /\.html$/,
                 use: [
