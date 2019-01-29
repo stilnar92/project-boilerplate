@@ -1,0 +1,21 @@
+{
+  "parser": "babel-eslint",
+  "plugins": ["jest", "prettier"],
+  "extends": ["plugin:prettier/recommended"],
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "rules": {
+    "no-use-before-define": [
+      "error",
+      {
+        "functions": false,
+        "classes": true,
+        "variables": true
+      }
+    ],
+    "import/newline-after-import": "off",
+    "quotes": "off"
+  }
+}
