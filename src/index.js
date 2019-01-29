@@ -1,6 +1,15 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDom from 'react-dom';
+import { App } from './app';
 
-const title = 'My Minimal React Webpack Babel Setup';
+const root = document.getElementById('root');
 
-ReactDOM.render(<div>{title}</div>, document.getElementById('root'));
+const render = () => {
+  ReactDom.render(<App />, root);
+};
+
+if (module.hot) {
+  module.hot.accept('./app', render);
+}
+
+render();
